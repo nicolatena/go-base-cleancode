@@ -11,8 +11,8 @@ import (
 
 
 
-	// "go-base-cleancode/entities/user/repository"
-	"go-base-cleancode/entities/user"
+	"go-base-cleancode/entities/user/repository"
+	// "go-base-cleancode/entities/user"
  	// "github.com/gin-gonic/contrib/sessions"
 	// "github.com/itsjamie/gin-cors"
 
@@ -22,12 +22,10 @@ import (
 
 func NewUserHttpHandler(route *gin.Engine, db *gorm.DB){
 
-	handler := &user.Usecase.InDB{DB: db}
-
-
+	handler := &repository.InDB{DB: db}
+	
 	v1 := route.Group("/v1")
 	{
-
 		api := v1.Group("/api")
 		{
 			users := api.Group("/users")
@@ -39,6 +37,5 @@ func NewUserHttpHandler(route *gin.Engine, db *gorm.DB){
 				users.DELETE("/delete/:id", handler.Delete)
 			}
 		}
-
 	}
 }
