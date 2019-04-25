@@ -7,12 +7,11 @@ import (
 )
 
 
-type InDB struct {
-	DB *gorm.DB
-}
-
 func Migrate(idb *gorm.DB) {
 
-	idb.Debug().AutoMigrate(&User{})
+	idb.Debug().AutoMigrate(
+		&User{}, 
+		&Product{}
+	)
 
 }
