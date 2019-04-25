@@ -19,12 +19,12 @@ type InDB struct {
 func (idb *InDB) Fetch(c *gin.Context) {
 
     var arr_data []User
-    var arr_meta MetaUser
+    var arr_meta Meta
     var response ResponseUser
 
     idb.DB.Find(&arr_data)
 
-    arr_meta = MetaUser{Status: true, Code: 200, Message: "Success"}
+    arr_meta = Meta{Status: true, Code: 200, Message: "Success"}
 
     response.Meta = arr_meta
     response.Data = arr_data
@@ -36,7 +36,7 @@ func (idb *InDB) Fetch(c *gin.Context) {
 func (idb *InDB) Store(c *gin.Context) {
     
     var arr_data []User
-    var arr_meta MetaUser
+    var arr_meta Meta
     var response ResponseUser
     sc_data := User{}
 
@@ -56,7 +56,7 @@ func (idb *InDB) Store(c *gin.Context) {
 
     idb.DB.Find(&arr_data)
 
-    arr_meta = MetaUser{Status: true, Code: 200, Message: "Success Inserted"}
+    arr_meta = Meta{Status: true, Code: 200, Message: "Success Inserted"}
 
     response.Meta = arr_meta
     response.Data = arr_data
@@ -68,7 +68,7 @@ func (idb *InDB) Store(c *gin.Context) {
 func (idb *InDB) Update(c *gin.Context) {
     
     var arr_data []User
-    var arr_meta MetaUser
+    var arr_meta Meta
     var response ResponseUser
     sc_data := User{}
 
@@ -83,7 +83,7 @@ func (idb *InDB) Update(c *gin.Context) {
 
     idb.DB.Find(&arr_data)
 
-    arr_meta = MetaUser{Status: true, Code: 200, Message: "Success Updated"}
+    arr_meta = Meta{Status: true, Code: 200, Message: "Success Updated"}
 
     response.Meta = arr_meta
     response.Data = arr_data
@@ -95,7 +95,7 @@ func (idb *InDB) Update(c *gin.Context) {
 func (idb *InDB) Delete(c *gin.Context) {
     
     var arr_data []User
-    var arr_meta MetaUser
+    var arr_meta Meta
     var response ResponseUser
     sc_data := User{}
 
@@ -107,7 +107,7 @@ func (idb *InDB) Delete(c *gin.Context) {
 
     idb.DB.Find(&arr_data)
 
-    arr_meta = MetaUser{Status: true, Code: 200, Message: "Success Deleted"}
+    arr_meta = Meta{Status: true, Code: 200, Message: "Success Deleted"}
 
     response.Meta = arr_meta
     response.Data = arr_data

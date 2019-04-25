@@ -17,13 +17,7 @@ type Product struct {
 }
 
 
-type MetaUser struct {
-    Status bool `json:"status"`
-    Code int `json:"code"`
-    Message string `json:"message"`
-}
-
-type ResponseUser struct {
-    Meta MetaUser `json:"meta"`
+type ResponseProduct struct {
+    Meta Meta `json:"meta"`
     Data []Product `json:"data"`
 }

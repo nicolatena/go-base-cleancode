@@ -11,7 +11,7 @@ func Migrate(idb *gorm.DB) {
 
 	idb.Debug().AutoMigrate(
 		&User{}, 
-		&Product{}
+		&Product{},
 	)
 
 }

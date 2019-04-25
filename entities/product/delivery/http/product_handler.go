@@ -11,10 +11,7 @@ import (
 
 
 
-	"go-base-cleancode/entities/user/repository"
-	// "go-base-cleancode/entities/user"
- 	// "github.com/gin-gonic/contrib/sessions"
-	// "github.com/itsjamie/gin-cors"
+	"go-base-cleancode/entities/product/repository"
 
 )
 
