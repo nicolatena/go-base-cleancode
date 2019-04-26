@@ -28,6 +28,7 @@ func Init() *gorm.DB {
 
 	dbUri := fmt.Sprintf("host=%s port=%s user=%s dbname=%s  password=%s", dbhost, port, username, dbname, password)
 	conn, err := gorm.Open("postgres", dbUri)
+	defer conn.Close()
 	if err != nil {
 		fmt.Print(err)
 	}
